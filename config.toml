@@ -1,0 +1,5 @@
+[server]
+enableStaticServing = true
+
+[server.staticFiles]
+directory = "./static"

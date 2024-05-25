@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            background-image: url('https://search.pstatic.net/sunny/?src=https%3A%2F%2Fwww.dogdrip.net%2Ffiles%2Fattach%2Fdvs%2F15%2F10%2F31%2F18564339%2F532%2F298%2F084%2F63120ba0008583424f6d9feb06ec25dd.jpg&type=sc960_832'); /* 실제 배경 이미지 URL로 교체 */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            height: 100vh; /* 뷰포트 높이의 100%로 설정 */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .main .content {
+            position: relative;
+            z-index: 2;
+        }
+        .main .content .aws {
+            font-size: 60px;
+            margin-left: -70%;
+            margin-top: -5%;
+            white-space: nowrap;
+            font-family: Arial, sans-serif;
+            font-weight: 100;
+            opacity: 0; /* 처음에는 보이지 않도록 설정 */
+            animation: fadeInMove 1s forwards; /* 애니메이션 추가 */
+        }
+        .main .content .ai {
+            font-size: 80px;
+            margin-left: -8%;
+            margin-top: 0;
+            font-family: sans-serif;
+            font-weight: 700; /* 보통 두께 설정 */
+            opacity: 0; /* 처음에는 보이지 않도록 설정 */
+            animation: fadeInMove 1s 0.4s forwards; /* 애니메이션 추가 */
+        }
+        .main .content .highlight {
+            color: #ff9900;
+            font-weight: 700; /* 얇은 두께 설정 */
+        }
+        .footer {
+            background-color: #F1F1F1; /* 배경색 변경 */
+            text-align: center;
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .main .small-image {
+            position: absolute;
+            bottom: 1.5cm;
+            right: 0.1cm;
+            z-index: 3;
+        }
+        .main .small-image img {
+            width: 30%;
+            height: auto;
+            border-radius: 35px;
+        }
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(1cm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="aws">Apple, Whiskey, Salad</h1>
+            <h1 class="ai"><span class="highlight">AI : </span> Safety from Detection</h1>
+        </div>
+        <div class="small-image">
+            <a href=" https://wij-thjeon-llama-2-7b-chat-thjeon-kor.hf.space/?">
+                <img src='data:image/png;base64,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' alt="Small Image">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
